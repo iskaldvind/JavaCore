@@ -21,9 +21,10 @@ public class Lesson2 {
             if (arr3[i] < 6) arr3[i] *= 2;
         }
 
-        int[][] arr4 = new int[2][2];
+        int[][] arr4 = new int[4][4];
         for (int i = 0; i < arr4.length; i++) {
             arr4[i][i] = 1;
+            arr4[i][arr4.length - 1 - i] = 1;
         }
 
         int[] arr5 = {1, 6, 48, 0, 29, -3, -100, 30, 71};
