@@ -1,3 +1,5 @@
+package io.iskaldvind;
+
 import java.util.Random;
 import java.util.Scanner;
 
