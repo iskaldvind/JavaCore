@@ -1,23 +1,34 @@
 package io.iskaldvind;
 
+import io.iskaldvind.animals.*;
+import io.iskaldvind.tools.Plate;
+
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Dog dog1 = new Dog("Woolfy");
-        dog1.run(100);
-        Dog dog2 = new Dog("Meatball");
-        dog2.swim(5);
-        Dog dog3 = new Dog("Muhtar");
-        dog3.swim(1000);
-        System.out.println(Dog.count + " dogs");
+        Cat[] cats = {
+                new Cat("Barsik"),
+                new Cat("Murzik"),
+                new Cat("Tom"),
+                new Cat("Vaska"),
+                new Cat("Pushok")};
 
-        Cat cat1 = new Cat("Barsik");
-        cat1.run(150);
-        Cat cat2 = new Cat("Tom");
-        cat2.swim(100);
-        System.out.println(Cat.count + " cats");
+        Plate plate = new Plate(35);
 
-        System.out.println(Animal.count + " animals");
+        feedCats(cats, plate);
+        plate.addFood(20);
+        feedCats(cats, plate);
+    }
+
+    private static void feedCats(Cat[] cats, Plate plate) {
+        for(Cat cat: cats) {
+            cat.eat(plate);
+        }
+
+        for (Cat cat: cats) {
+            cat.logSatiety();
+        }
     }
 }

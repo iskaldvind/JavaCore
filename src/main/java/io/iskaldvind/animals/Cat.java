@@ -1,16 +1,18 @@
-package io.iskaldvind;
+package io.iskaldvind.animals;
+
+import io.iskaldvind.tools.Plate;
 
 public class Cat extends Animal {
 
-    static int count = 0;
+    public static int count = 0;
 
     public Cat(String name) {
-        super(name, 200, 0);
+        super(name, 200, 0, 10);
         count++;
     }
 
     @Override
-    protected void run(int distance) {
+    public void run(int distance) {
         if (distance > 0 && distance <= this.runLimit) {
             System.out.println(this.name + " runs " + distance + " meters");
         } else {
@@ -18,8 +20,12 @@ public class Cat extends Animal {
         }
     }
 
+    public void eat(Plate plate) {
+        super.eat(plate, appetite);
+    }
+
     @Override
-    protected void swim(int distance) {
+    public void swim(int distance) {
         System.out.println(this.name + " thinks swimming is a bad idea");
     }
 }
